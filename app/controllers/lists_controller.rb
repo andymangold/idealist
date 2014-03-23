@@ -24,6 +24,8 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @list.destroy
 
+    flash.notice = "#{@list.title} deleted!"
+
     redirect_to lists_path
   end
 
@@ -34,6 +36,8 @@ class ListsController < ApplicationController
   def update
     @list = List.find(params[:id])
     @list.update(list_params)
+
+    flash.notice = "#{@list.title} updated!"
 
     redirect_to list_path(@list)
   end
