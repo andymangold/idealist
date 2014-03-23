@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  include ListsHelper
 
   def index
     @lists = List.all
@@ -13,8 +14,7 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.new
-    @list.title = params[:list][:title]
+    @list = List.new(list_params)
     @list.save
     redirect_to list_path(@list)
   end
