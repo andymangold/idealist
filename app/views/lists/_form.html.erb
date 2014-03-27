@@ -8,10 +8,5 @@
   <%= f.label :title %>
   <%= f.text_field :title %>
 
-  <%= f.fields_for :items, @list.items.build do |fi| %>
-    <%= fi.label :name %>
-    <%= fi.text_field :name %>
-  <% end %>
-
   <%= f.submit %>
 <% end %>

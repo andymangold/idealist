@@ -1,3 +1,9 @@
 <li>
   <%= item.name %>
+  <%= form_for @list do |f| %>
+    <%= f.fields_for :items, item do |fi| %>
+      <%= fi.hidden_field :_destroy, value: true %>
+      <%= fi.submit "Destroy Everything (Except just this one thing)" %>
+    <% end %>
+  <% end %>
 </li>
