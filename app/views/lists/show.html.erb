@@ -1,4 +1,4 @@
-<h1><%= @list.title %></h1>
+<h1><%= @list.items.count %> <%= @list.title %></h1><!-- this could surely be better -->
 
 <ul>
   <%= render partial: "lists/item", collection: @list.items %>
